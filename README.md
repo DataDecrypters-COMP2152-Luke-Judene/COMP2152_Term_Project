@@ -2,15 +2,17 @@
 
 ## Team Name
 <!-- Replace with your team name -->
-Team _______
+Team - DataDecrypters
 
 ## Team Members
 
-| Member | Vulnerability Found | Branch Name |
-|--------|-------------------|-------------|
-| _______ | _______ | _______ |
-| _______ | _______ | _______ |
-| _______ | _______ | _______ |
+| Member          | Vulnerability Found |      Branch Name      |
+|-----------------|---------------------|-----------------------|
+| Karthik Madarapu|   Missing HTTPS on  | karthik_missing_https |
+|                 |  multiple subdomains|                       |
+|---------------------------------------------------------------|
+| _______________ | ___________________ | _____________________ |
+| _______________ | ___________________ | _____________________ |
 
 ## Videos
 
