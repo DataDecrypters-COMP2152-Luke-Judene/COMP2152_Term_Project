@@ -11,7 +11,8 @@ Team - DataDecrypters
 | Karthik Madarapu|   Missing HTTPS on  | karthik_missing_https |
 |                 |  multiple subdomains|                       |
 |---------------------------------------------------------------|
-| _______________ | ___________________ | _____________________ |
+| Sanyoung Yoon   | Infomation Disclosure | sanyoung_info_disclosure_api |
+                     via API Response
 | _______________ | ___________________ | _____________________ |
 
 ## Videos
