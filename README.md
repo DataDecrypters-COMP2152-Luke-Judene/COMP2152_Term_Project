@@ -2,23 +2,26 @@
 
 ## Team Name
 <!-- Replace with your team name -->
-Team _______
+Team - DataDecrypters
 
 ## Team Members
 
-| Member | Vulnerability Found | Branch Name |
-|--------|-------------------|-------------|
-| _______ | _______ | _______ |
-| _______ | _______ | _______ |
-| _______ | _______ | _______ |
+| Member          | Vulnerability Found |      Branch Name      |
+|-----------------|---------------------|-----------------------|
+| Karthik Madarapu|   Missing HTTPS on  | karthik_missing_https |
+|                 |  multiple subdomains|                       |
+|---------------------------------------------------------------|
+| Sanyoung Yoon   | Infomation Disclosure | sanyoung_info_disclosure_api |
+                     via API Response
+| _______________ | ___________________ | _____________________ |
 
 ## Videos
 
 Each team member records a short video (max 3 minutes) explaining their vulnerability. Add your YouTube links below:
 
-- Member 1: https://youtube.com/watch?v=_______
+- Karthik Madarapu: https://youtu.be/VUMKXCIR4_g
 - Member 2: https://youtube.com/watch?v=_______
-- Member 3: https://youtube.com/watch?v=_______
+- Sanyoung Yoon: https://youtu.be/mobLeUZElJE
 
 ## Target
 
