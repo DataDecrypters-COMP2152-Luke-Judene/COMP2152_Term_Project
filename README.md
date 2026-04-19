@@ -4,23 +4,22 @@
 <!-- Replace with your team name -->
 Team - DataDecrypters
 
-## Team Members
+# Team - DataDecrypters
 
-| Member          | Vulnerability Found |      Branch Name      |
-|-----------------|---------------------|-----------------------|
-| Karthik Madarapu|   Missing HTTPS on  | karthik_missing_https |
-|                 |  multiple subdomains|                       |
-|---------------------------------------------------------------|
-| Sanyoung Yoon   | Infomation Disclosure | sanyoung_info_disclosure_api |
-                     via API Response
-| _______________ | ___________________ | _____________________ |
+## Team Members
+| Member           | Vulnerability Found                        | Branch Name                  |
+|------------------|--------------------------------------------|------------------------------|
+| Karthik Madarapu | Missing HTTPS on multiple subdomains       | karthik_missing_https        |
+| Sanyoung Yoon    | Information Disclosure via API Response    | sanyoung_info_disclosure_api |
+| Judene Brown     | No Account Lockout on login.0x10.cloud     | Judene_no_lockout            |
+
 
 ## Videos
 
 Each team member records a short video (max 3 minutes) explaining their vulnerability. Add your YouTube links below:
 
 - Karthik Madarapu: https://youtu.be/VUMKXCIR4_g
-- Member 2: https://youtube.com/watch?v=_______
+- Judene Brown https://youtube.com/watch?v=_______
 - Sanyoung Yoon: https://youtu.be/mobLeUZElJE
 
 ## Target
