@@ -19,7 +19,7 @@ Team - DataDecrypters
 Each team member records a short video (max 3 minutes) explaining their vulnerability. Add your YouTube links below:
 
 - Karthik Madarapu: https://youtu.be/VUMKXCIR4_g
-- Judene Brown https://youtube.com/watch?v=_______
+- Judene Brown https://youtu.be/J3jiinsYJqI
 - Sanyoung Yoon: https://youtu.be/mobLeUZElJE
 
 ## Target
