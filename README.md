@@ -12,7 +12,7 @@ Team - DataDecrypters
 | Karthik Madarapu | Missing HTTPS on multiple subdomains       | karthik_missing_https        |
 | Sanyoung Yoon    | Information Disclosure via API Response    | sanyoung_info_disclosure_api |
 | Judene Brown     | No Account Lockout on login.0x10.cloud     | Judene_no_lockout            |
-
+| Luke Wedgwood    | Files  accessible no authentication        | Luke_Unprotected_Files       |
 
 ## Videos
 
