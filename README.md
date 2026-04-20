@@ -21,6 +21,7 @@ Each team member records a short video (max 3 minutes) explaining their vulnerab
 - Karthik Madarapu: https://youtu.be/VUMKXCIR4_g
 - Judene Brown https://youtu.be/J3jiinsYJqI
 - Sanyoung Yoon: https://youtu.be/mobLeUZElJE
+- Luke Wedgwood: https://youtu.be/MbepXlVj9w4
 
 ## Target
 
